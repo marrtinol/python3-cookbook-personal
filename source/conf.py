@@ -28,7 +28,7 @@ import os
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['chinese_search']
+# extensions = ['chinese_search']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -74,15 +74,19 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'utf8extra':'',#必須
 # Additional stuff for the LaTeX preamble.
 'preamble': r"""
-\usepackage{xeCJK}
+\usepackage{ctex}
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
-\setCJKmainfont{WenQuanYi Micro Hei}
-\setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
-\setCJKfamilyfont{song}{WenQuanYi Micro Hei}
-\setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
+% \setCJKmainfont{WenQuanYi Micro Hei}
+% \setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
+% \setCJKfamilyfont{song}{WenQuanYi Micro Hei}
+% \setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\newcommand\normalsectioning{\setcounter{secnumdepth}{2}}
+\newcommand\specialsectioning{\setcounter{secnumdepth}{-2}}
 """}
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -128,6 +132,14 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # otherwise, readthedocs.org uses their theme by default, so no need to specify it
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+html_theme_options = {
+    'collapse_navigation': False,
+    'display_version': True,
+    'navigation_depth': 2,
+}
 
 _exts = "../exts"
 sys.path.append(os.path.abspath(_exts))

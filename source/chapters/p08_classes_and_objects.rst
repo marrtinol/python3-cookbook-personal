@@ -6,7 +6,7 @@
 类封装技术、继承、内存管理以及有用的设计模式。
 
 
-Contents:
+
 
 .. toctree::
    :maxdepth: 1

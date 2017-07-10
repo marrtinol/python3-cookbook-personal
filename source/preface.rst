@@ -118,4 +118,3 @@ Copyright 2013 David Beazley and Brian Jones, 978-1-449-34037-7.
 还有Python社区的帮助和鼓励。我们还想感谢上一个版本的编辑Jake Vanderplas, Robert Kern,and Andrea Crotti。
 尽管这个版本是最新的，但是前一个版本已经提供了一个感兴趣主题和解决方案的框架。
 最后，最最重要的就是，我们要感谢所有预览版本的读者，他们的评论和改进意见对本书很有帮助。
-

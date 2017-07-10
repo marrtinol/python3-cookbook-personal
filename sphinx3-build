@@ -1,0 +1,28 @@
+#!/usr/local/bin/python3
+# -*- coding: utf-8 -*-
+
+"""
+Same as /usr/bin/sphinx-build but with different
+interpreter
+"""
+
+import sys
+
+if __name__ == '__main__':
+    from sphinx import main, make_main
+    if sys.argv[1:2] == ['-M']:
+        sys.exit(make_main(sys.argv))
+    else:
+        sys.exit(main(sys.argv))
+
+
+# old code
+# -*- coding: utf-8 -*-
+# import re
+# import sys
+
+# from sphinx import main
+
+# if __name__ == '__main__':
+#     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+#     sys.exit(main())

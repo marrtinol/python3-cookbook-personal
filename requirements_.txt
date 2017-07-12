@@ -1,10 +1,10 @@
-# PIL==1.1.7
+PIL==1.1.7
 greenlet==0.4.5
 gunicorn==19.1.1
 oauthlib==0.7.2
 paho-mqtt==1.0
 paramiko==1.15.1
-# psycopg2==2.5.4
+psycopg2==2.5.4
 pycrypto==2.6.1
 pytz==2014.9
 tzlocal==1.1.2

@@ -82,11 +82,30 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 % \setCJKfamilyfont{song}{WenQuanYi Micro Hei}
 % \setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
 \XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt
+% \XeTeXlinebreakskip = 0pt plus 1pt
+\renewcommand{\contentsname}{}
+
+% 在 section 前插入分页
 \usepackage{titlesec}
 \newcommand{\sectionbreak}{\clearpage}
-\newcommand\normalsectioning{\setcounter{secnumdepth}{2}}
-\newcommand\specialsectioning{\setcounter{secnumdepth}{-2}}
+
+% 章节编号只编号到 subsection
+\newcommand\normalsecnumdepth{\setcounter{secnumdepth}{2}}
+
+% 所有层次章节都不编号
+\newcommand\specialsecnumdepth{\setcounter{secnumdepth}{-2}}  
+
+% toc 到 subsection
+\newcommand\normaltocdepth{
+    \setcounter{tocdepth}{2}
+    \addtocontents{toc}{\setcounter{tocdepth}{2}}
+}
+
+% toc 到 section
+\newcommand\specialtocdepth{
+    \setcounter{tocdepth}{1}
+    \addtocontents{toc}{\setcounter{tocdepth}{1}}
+}
 """}
 
 # Grouping the document tree into LaTeX files. List of tuples
